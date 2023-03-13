@@ -226,7 +226,7 @@ fn read_tasks() -> Result<Vec<Task>> {
 
     // ~/.config/ttr/ttr.yaml
     let config_dir_config = dirs::config_dir()
-        .map(|home| home.join(".config/ttr/ttr.yaml"))
+        .map(|home| home.join("ttr").join("ttr.yaml"))
         .filter(|config| config.is_file());
     if let Some(config) = config_dir_config {
         tasks.extend(tasks_from_file(config)?);
